@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Planes Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Banner principal -->
+<!-- Banner con dos imágenes lado a lado -->
+<div class="banner-dual">
+  <img src="https://blog.movistar.com.ec/wp-content/uploads/2025/01/Cuenca-Xavier-Calderon-Jose-Andres-Caballero-Ecuador-nos-mueve-1024x574.jpg" />
+  <img src="https://blog.movistar.com.ec/wp-content/uploads/2025/01/ECUADOR-NOS-MUEVE-Olon-Jose-Andres-Caballero-Xavier-Calderon-Movistar-1024x576.jpg" />
+</div>
+
+  <!-- Buscador -->
+  <ion-item>
+    <ion-input placeholder="Buscar planes" [(ngModel)]="filtro"></ion-input>
+    <ion-icon slot="end" name="search-outline"></ion-icon>
+  </ion-item>
+
+  <h2 class="titulo-seccion">Planes Disponibles</h2>
+<ion-button fill="solid" color="primary" routerLink="/login" class="btn-login">
+  Iniciar Sesión
+</ion-button>
+
+  <!-- LISTA DE PLANES -->
+  <ion-list>
+    <ion-card *ngFor="let p of planesFiltrados">
+
+      <!-- Imagen del plan -->
+      <ion-img [src]="p.img"></ion-img>
+
+      <!-- Cabecera -->
+      <ion-card-header>
+        <ion-card-title class="titulo-plan">{{ p.nombre }}</ion-card-title>
+        <ion-card-subtitle class="precio-plan">${{ p.precio }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <!-- Descripción corta -->
+      <ion-card-content>
+        <p>{{ p.descripcion }}</p>
+
+        <!-- Datos esenciales -->
+        <ion-item lines="none">
+          <ion-icon name="cellular-outline"></ion-icon>
+          <ion-label>{{ p.datos }}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-icon name="call-outline"></ion-icon>
+          <ion-label>{{ p.minutos }}</ion-label>
+        </ion-item>
+
+        <!-- BOTÓN: VER DETALLES -->
+        <ion-button expand="block" color="primary" (click)="p.show = !p.show">
+          {{ p.show ? 'Ocultar Detalles' : 'Ver Detalles' }}
+        </ion-button>
+
+        <!-- SECCIÓN DESPLEGABLE -->
+        <div class="detalles" *ngIf="p.show">
+
+          <h3 class="subtitulo">Detalles del Plan</h3>
+
+          <ul class="lista-detalles">
+            <li><strong>Segmento:</strong> {{ p.segmento }}</li>
+            <li><strong>Público Objetivo:</strong> {{ p.publico }}</li>
+
+            <h4 class="subtitulo2">Características Técnicas</h4>
+
+            <li><strong>Datos Móviles:</strong> {{ p.caracteristicas.datos }}</li>
+            <li><strong>Minutos de Voz:</strong> {{ p.caracteristicas.minutos }}</li>
+            <li><strong>SMS:</strong> {{ p.caracteristicas.sms }}</li>
+            <li><strong>Velocidad:</strong> {{ p.caracteristicas.velocidad }}</li>
+            <li><strong>Redes Sociales:</strong> {{ p.caracteristicas.redes }}</li>
+            <li><strong>WhatsApp:</strong> {{ p.caracteristicas.whatsapp }}</li>
+            <li><strong>Llamadas Internacionales:</strong> {{ p.caracteristicas.internacional }}</li>
+            <li><strong>Roaming:</strong> {{ p.caracteristicas.roaming }}</li>
+          </ul>
+
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
+
+</ion-content>

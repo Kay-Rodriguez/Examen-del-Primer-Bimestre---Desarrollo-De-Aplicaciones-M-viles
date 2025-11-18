@@ -1,0 +1,73 @@
+/* CONTENEDOR GENERAL */
+.login-contenedor {
+  display: flex;
+  justify-content: center;
+}
+
+/* LAYOUT DE DOS COLUMNAS */
+.login-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  width: 500%;
+  max-width: 1300px;
+  align-items: center;
+}
+
+/* IMAGEN */
+.login-img img {
+  width: 800%;
+  height: 800%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+}
+
+/* FORMULARIO */
+.login-form {
+  width: 100%;
+}
+
+.titulo-login {
+  margin-bottom: 5px;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.subtitulo-login {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* BOTONES */
+.btn-usuario {
+  --background: #0039ff;
+  --background-hover: #234bff;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.btn-asesor {
+  --background: #990a9e; /* color success mejorado */
+  --background-hover: #740cb9;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.btn-crear {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #0039ff !important;
+}
+
+/* RESPONSIVE MODO CELULAR */
+@media (max-width: 700px) {
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .login-img img {
+    max-height: 250px;
+  }
+}

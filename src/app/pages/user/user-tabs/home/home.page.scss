@@ -1,0 +1,112 @@
+.banner {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+
+  img {
+    width: 50%;
+    border-radius: 14px;
+    object-fit: cover;
+    height: 110px;
+  }
+}
+
+.search-bar {
+  margin-bottom: 10px;
+  border-radius: 999px;
+  --background: #f2f4ff;
+}
+
+.titulo-seccion {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.card-plan {
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+  margin-bottom: 14px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px 0 16px;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.segmento {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.publico {
+  font-size: 12px;
+  color: #888;
+}
+
+.card-precio {
+  text-align: right;
+
+  .precio {
+    font-size: 22px;
+    font-weight: 800;
+    color: #3b055f;
+  }
+
+  small {
+    display: block;
+    font-size: 12px;
+    color: #777;
+  }
+}
+
+.descripcion {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #555;
+}
+
+.datos-basicos p {
+  font-size: 13px;
+  margin: 4px 0;
+  ion-icon {
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+}
+
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.btn-contratar {
+  --background: linear-gradient(90deg, #00c853, #009624);
+  --border-radius: 999px;
+  font-weight: 600;
+}
+
+.detalles {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+
+  h4 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  ul {
+    padding-left: 18px;
+    font-size: 13px;
+  }
+}

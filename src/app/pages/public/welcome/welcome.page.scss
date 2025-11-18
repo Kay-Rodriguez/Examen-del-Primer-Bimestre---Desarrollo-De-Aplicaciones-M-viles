@@ -1,0 +1,46 @@
+/* CONTENEDOR GENERAL */
+.home-container {
+  text-align: center;
+}
+
+/* TITULOS */
+.titulo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subtitulo {
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* GRID DE 2 IMÁGENES */
+.grid-imagenes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.grid-imagenes img {
+  width: 800%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* BOTÓN PRINCIPAL */
+.btn1 {
+  --background: #0039ff;
+  --background-hover: #234bff;
+  --border-radius: 12px;
+  font-weight: bold;
+}
+
+/* BOTÓN SECUNDARIO */
+.btn2 {
+  color: #0039ff !important;
+  font-weight: bold;
+}

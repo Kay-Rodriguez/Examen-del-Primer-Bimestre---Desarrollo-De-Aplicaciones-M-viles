@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Chats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="!seleccionado" class="lista-chat">
+    <ion-list>
+      <ion-item *ngFor="let c of contratos" button (click)="abrirChat(c)">
+        <ion-label>
+          <h2>{{ c.perfiles?.nombre_completo }}</h2>
+          <p>{{ c.planes_moviles?.nombre }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="seleccionado" class="chat-box">
+    <div class="header-chat">
+      <ion-button fill="clear" (click)="seleccionado = null">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <strong>{{ seleccionado.perfiles?.nombre_completo }}</strong>
+    </div>
+
+    <div class="mensajes">
+      <div *ngFor="let m of mensajes" class="bubble">
+        <p>{{ m.mensaje }}</p>
+        <small>{{ m.created_at | date:'shortTime' }}</small>
+      </div>
+    </div>
+
+    <div class="enviar">
+      <ion-input placeholder="Escribe..." [(ngModel)]="nuevoMensaje"></ion-input>
+      <ion-button (click)="enviar()">Enviar</ion-button>
+    </div>
+  </div>
+
+</ion-content>

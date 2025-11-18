@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Catálogo de Planes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Banner doble -->
+  <div class="banner">
+    <img src="https://blog.movistar.com.ec/wp-content/uploads/2025/01/Cuenca-Xavier-Calderon-Jose-Andres-Caballero-Ecuador-nos-mueve-1024x574.jpg">
+    <img src="https://blog.movistar.com.ec/wp-content/uploads/2025/01/ECUADOR-NOS-MUEVE-Olon-Jose-Andres-Caballero-Xavier-Calderon-Movistar-1024x576.jpg">
+  </div>
+
+  <!-- Buscador -->
+  <ion-item class="search-bar">
+    <ion-icon name="search-outline" slot="start"></ion-icon>
+    <ion-input placeholder="Buscar por nombre, segmento o público" [(ngModel)]="filtro"></ion-input>
+  </ion-item>
+
+  <h2 class="titulo-seccion">Planes Disponibles</h2>
+
+  <ion-spinner *ngIf="cargando" name="crescent"></ion-spinner>
+
+  <!-- LISTA DE PLANES -->
+  <ion-list>
+    <ion-card *ngFor="let p of planesFiltrados" class="card-plan">
+
+      <div class="card-top">
+        <div class="card-info">
+          <h3>{{ p.nombre }}</h3>
+          <p class="segmento">{{ p.segmento }}</p>
+          <p class="publico">{{ p.publico_objetivo }}</p>
+        </div>
+
+        <div class="card-precio">
+          <span class="precio">${{ p.precio_mensual }}</span>
+          <small>/mes</small>
+        </div>
+      </div>
+
+      <ion-card-content>
+        <p class="descripcion">{{ p.descripcion }}</p>
+
+        <div class="datos-basicos">
+          <p>
+            <ion-icon name="cellular-outline"></ion-icon>
+            {{ p.gb_datos }} GB de datos
+          </p>
+          <p>
+            <ion-icon name="call-outline"></ion-icon>
+            {{ p.minutos }} minutos nacionales
+          </p>
+          <p *ngIf="p.promocion">
+            <ion-icon name="sparkles-outline"></ion-icon>
+            {{ p.promocion }}
+          </p>
+        </div>
+
+        <!-- Botones -->
+        <div class="acciones">
+          <ion-button size="small" fill="outline" color="tertiary" (click)="toggleDetalle(p)">
+            {{ p._show ? 'Ocultar Detalles' : 'Ver Detalles' }}
+          </ion-button>
+
+          <ion-button size="small" class="btn-contratar" (click)="contratar(p)">
+            Contratar
+          </ion-button>
+        </div>
+
+        <!-- Detalle desplegable -->
+        <div class="detalles" *ngIf="p._show">
+          <h4>Información del plan</h4>
+          <ul>
+            <li><strong>Segmento:</strong> {{ p.segmento }}</li>
+            <li><strong>Público Objetivo:</strong> {{ p.publico_objetivo }}</li>
+            <li><strong>Datos:</strong> {{ p.gb_datos }} GB</li>
+            <li><strong>Minutos:</strong> {{ p.minutos }} nacionales</li>
+          </ul>
+        </div>
+
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
+
+</ion-content>

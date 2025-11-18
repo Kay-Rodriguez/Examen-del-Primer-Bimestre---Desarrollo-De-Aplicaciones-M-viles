@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="header-gradient">
+    <ion-title>Solicitudes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2 class="titulo">Solicitudes de Contratación</h2>
+  <p class="sub">Revisa las solicitudes y aprueba o rechaza según el caso.</p>
+
+  <ion-spinner *ngIf="cargando" name="crescent"></ion-spinner>
+
+  <ion-card *ngFor="let s of lista" class="card-solicitud">
+    <ion-card-header>
+      <ion-card-title>{{ s.perfiles?.nombre_completo || 'Usuario' }}</ion-card-title>
+      <ion-card-subtitle>{{ s.planes_moviles?.nombre }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="fecha">
+        <ion-icon name="calendar-outline"></ion-icon>
+        {{ s.created_at | date:'short' }}
+      </p>
+
+      <p class="precio">
+        Plan: <strong>${{ s.planes_moviles?.precio_mensual }}</strong> / mes
+      </p>
+
+      <div class="estado">
+        <ion-badge *ngIf="s.estado === 'pendiente'" color="warning">PENDIENTE</ion-badge>
+        <ion-badge *ngIf="s.estado === 'aprobado'" color="success">APROBADO</ion-badge>
+        <ion-badge *ngIf="s.estado === 'rechazado'" color="danger">RECHAZADO</ion-badge>
+      </div>
+
+      <div class="botones" *ngIf="s.estado === 'pendiente'">
+        <ion-button color="success" (click)="aprobar(s.id)">
+          <ion-icon slot="start" name="checkmark-outline"></ion-icon>
+          Aprobar
+        </ion-button>
+
+        <ion-button color="danger" (click)="rechazar(s.id)">
+          <ion-icon slot="start" name="close-outline"></ion-icon>
+          Rechazar
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

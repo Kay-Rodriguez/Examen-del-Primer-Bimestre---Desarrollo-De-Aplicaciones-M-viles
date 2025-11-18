@@ -1,0 +1,14 @@
+ion-tab-bar {
+  --background: #ffffff;
+  --color: #7a7a7a;
+  --color-selected: #00b368; /* Verde asesor */
+
+  ion-tab-button {
+    font-size: 12px;
+    --ripple-color: #00b368;
+
+    ion-label {
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+/* =====================================
+   BANNER DOBLE (2 imágenes lado a lado)
+===================================== */
+.banner-dual {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  
+}
+
+.banner-dual img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+ion-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+}
+ion-card {
+  margin: 0 auto;
+  width: 100%;    
+  max-width: 800px;
+}
+
+/* =====================================
+   IMÁGENES DE LOS PLANES (más pequeñas)
+===================================== */
+ion-card ion-img {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* =====================================
+   BOTÓN VER DETALLES (color personalizado)
+===================================== */
+.btn-detalles {
+  --background: #0039ff;
+  --background-hover: #940caf;
+  --background-activated: #1e30ff;
+  --background-focused: #7d0888;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* =====================================
+   PANEL DE DETALLES DESPLEGABLE
+===================================== */
+.detalles {
+  background: #eef0ff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+  animation: fadeIn 0.3s ease-in-out;
+
+}
+.titulo-seccion {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

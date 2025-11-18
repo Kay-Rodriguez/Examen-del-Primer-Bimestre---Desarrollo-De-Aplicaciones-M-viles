@@ -1,0 +1,43 @@
+@import '../dashboard/dashboard.page.scss'; // reutiliza colores
+
+.titulo {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.sub {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.card-solicitud {
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+  margin-bottom: 12px;
+}
+
+.fecha {
+  font-size: 13px;
+  color: #777;
+
+  ion-icon {
+    margin-right: 6px;
+  }
+}
+
+.precio {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.estado {
+  margin-top: 8px;
+}
+
+.botones {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+}

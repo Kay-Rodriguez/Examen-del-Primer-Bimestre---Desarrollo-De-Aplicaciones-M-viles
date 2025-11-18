@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar class="header-gradient">
+    <ion-title>Chat con Asesor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Lista de conversaciones -->
+  <div *ngIf="!seleccionado" class="lista-conversaciones ion-padding">
+    <h2>Mis Chats</h2>
+    <p class="sub">Selecciona un plan contratado para conversar con un asesor.</p>
+
+    <ion-list>
+      <ion-item button detail="true" *ngFor="let c of contratos" (click)="abrirChat(c)">
+        <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
+        <ion-label>
+          <h3>{{ c.planes_moviles?.nombre }}</h3>
+          <p>{{ c.estado | uppercase }} - {{ c.created_at | date:'short' }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Chat seleccionado -->
+  <div *ngIf="seleccionado" class="chat-wrapper">
+    <ion-header class="chat-header">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button fill="clear" (click)="seleccionado = null">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>
+          {{ seleccionado.planes_moviles?.nombre }}
+          <div class="sub-titulo">Conversación con asesor</div>
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="chat-content">
+      <div class="mensajes">
+        <div
+          *ngFor="let m of mensajes"
+          class="burbuja">
+
+          <p>{{ m.mensaje }}</p>
+          <span>{{ m.created_at | date:'shortTime' }}</span>
+        </div>
+      </div>
+    </ion-content>
+
+    <ion-footer class="chat-footer">
+      <ion-item lines="none">
+        <ion-input
+          placeholder="Escribe un mensaje..."
+          [(ngModel)]="nuevoMensaje">
+        </ion-input>
+        <ion-button (click)="enviar()">
+          <ion-icon name="send-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-footer>
+  </div>
+
+</ion-content>

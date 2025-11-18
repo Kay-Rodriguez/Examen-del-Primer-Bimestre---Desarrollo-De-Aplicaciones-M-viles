@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/welcome"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding login-contenedor">
+
+  <!-- CONTENEDOR DE 2 COLUMNAS -->
+  <div class="login-layout">
+
+    <!-- IMAGEN LADO IZQUIERDO/DERECHO -->
+    <div class="login-img">
+      <img src='assets/planes/tingo.jpg'>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="login-form">
+
+      <h2 class="titulo-login">Bienvenido</h2>
+      <p class="subtitulo-login">Ingresa tus credenciales para continuar</p>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
+
+      <!-- BOTONES -->
+      <ion-button expand="block" class="btn-usuario" (click)="loginRol('usuario')">
+        Entrar como Usuario
+      </ion-button>
+
+      <ion-button expand="block" class="btn-asesor" (click)="loginRol('asesor')">
+        Entrar como Asesor
+      </ion-button>
+
+      <ion-button fill="clear" expand="block" routerLink="/register" class="btn-crear">
+        Crear cuenta nueva
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>

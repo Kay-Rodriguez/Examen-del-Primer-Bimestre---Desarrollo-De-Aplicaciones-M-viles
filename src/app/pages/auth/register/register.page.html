@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/welcome"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding register-contenedor">
+
+  <div class="register-layout">
+
+    <!-- IMAGEN IZQUIERDA -->
+    <div class="register-img">
+      <img src="https://statics.forbes.com.ec/2025/03/crop/67dd9618c3361__822x822.webp">
+    </div>
+
+    <!-- FORMULARIO CENTRADO -->
+    <div class="register-form">
+
+      <h2 class="titulo-register">Crear cuenta nueva</h2>
+      <p class="sub-register">Completa los datos para registrarte</p>
+
+      <ion-item>
+        <ion-label position="floating">Nombre completo</ion-label>
+        <ion-input [(ngModel)]="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Teléfono</ion-label>
+        <ion-input type="tel" [(ngModel)]="telefono"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="btn-registrar" (click)="registrar()">
+        Crear cuenta
+      </ion-button>
+
+    </div>
+
+    <!-- IMAGEN DERECHA -->
+    <div class="register-img">
+      <img src="https://pbs.twimg.com/profile_images/1195002536752820230/wTmXHUDa_400x400.jpg">
+    </div>
+
+  </div>
+
+</ion-content>
