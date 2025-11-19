@@ -125,15 +125,23 @@ Registro
 
 Home (catálogo activo)
 
+![Imagen de WhatsApp 2025-11-19 a las 16 39 16_9c5241a2](https://github.com/user-attachments/assets/e5ce3079-b44a-42d6-a683-7006fc40f754)
+
 Mis Contratos
+![Imagen de WhatsApp 2025-11-19 a las 16 39 16_1cf413a0](https://github.com/user-attachments/assets/b70b502e-ac76-40b4-9919-45f82a4f9d53)
 
 Chat con asesor
+![Imagen de WhatsApp 2025-11-19 a las 16 39 16_768af6b4](https://github.com/user-attachments/assets/afdeff23-8107-4d82-83ee-5f8d3feeb1f5)
 
 Perfil
 
+![Imagen de WhatsApp 2025-11-19 a las 16 39 16_947f4aa5](https://github.com/user-attachments/assets/543fbc29-2705-424e-ba46-eb48445d7b10)
+
 Dashboard (CRUD planes)
 
-Solicitudes
+![Imagen de WhatsApp 2025-11-19 a las 16 39 16_e4b01a1c](https://github.com/user-attachments/assets/fef3a070-410e-4826-a4ad-65f6b5c55df5)
 
 Chats con clientes
+
+![Imagen de WhatsApp 2025-11-19 a las 16 39 16_e7d784b4](https://github.com/user-attachments/assets/74e74e35-01f6-49c2-b702-a9e2f7c773a4)
 
