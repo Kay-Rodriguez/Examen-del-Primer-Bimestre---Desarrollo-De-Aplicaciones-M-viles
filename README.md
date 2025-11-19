@@ -13,14 +13,17 @@ Escenario: Tras la adquisición de Movistar Ecuador por parte de TIGO, se desarr
 | Real Time     | Supabase Realtime    |
 | Build Android | Capacitor 6          |
 
-👥 Roles del Sistema
-1️ Usuario Invitado (Público)
+#👥 Roles del Sistema
+
+1️ Usuario Invitado (Público
+
 Ver catálogo de planes
 Ver detalle de planes
 No puede chatear
 No puede contratar
 
 2️ Usuario Registrado
+
 Ver catálogo
 Contratar planes
 Chat en tiempo real
@@ -35,7 +38,8 @@ Ver solicitudes de contratación
 Aprobar / rechazar
 Chat en tiempo real con clientes
 
-🛢 Base de Datos – Supabase (SQL usado en este proyecto)
+#🛢 Base de Datos – Supabase (SQL usado en este proyecto)
+
 Tabla perfiles 
 create table perfiles (
   id uuid primary key references auth.users(id) on delete cascade,
@@ -46,19 +50,21 @@ create table perfiles (
 );
 
 Incluye:
-
 RLS activado
 Políticas: lectura y actualización solo propia
 Trigger automático al crear usuario
+
 Tabla planes_moviles (CRUD para asesores, lectura para usuarios)
 Incluye políticas:
 Asesores: CRUD completo
 Público: solo lectura de planes activos
+
 Tabla contrataciones (solicitudes de usuarios)
 Inserta usuario registrado
 Asesor ve todas
 Asesor actualiza estado
 Usuario solo ve las suyas
+
 Tabla mensajes_chat (chat en tiempo real)
 Políticas:
 Insert: cada usuario solo puede enviar sus propios mensajes
@@ -72,8 +78,6 @@ Bucket: planes-imagenes
 ✔ Insert solo para asesores
 ✔ Máx 5 MB
 ✔ JPG / PNG
-
-Ejemplo de upload:
 
 const url = await this.supabase
   .storage
@@ -100,17 +104,23 @@ escucharChat(id, callback) {
 Público
 
 Welcome
+
 <img width="1351" height="592" alt="image" src="https://github.com/user-attachments/assets/24699e94-1449-4cf2-ad2e-1b62f36853ff" />
 
 Catálogo público
 
-Detalle de plan
 <img width="419" height="521" alt="image" src="https://github.com/user-attachments/assets/9b41b6ae-fbfd-4f13-aa2c-19a4bec3ecd1" />
 
+Detalle de plan
+
+<img width="338" height="478" alt="image" src="https://github.com/user-attachments/assets/766bfac6-10e0-4e45-943b-db8213f78c8c" />
+
 Login
+
 <img width="1058" height="386" alt="image" src="https://github.com/user-attachments/assets/1aed7846-9ef3-4a54-8499-c8ba01c3d11e" />
 
 Registro
+
 <img width="1364" height="482" alt="image" src="https://github.com/user-attachments/assets/241b5f6e-44c8-45aa-9fed-afca5e4ec190" />
 
 Home (catálogo activo)
@@ -126,3 +136,4 @@ Dashboard (CRUD planes)
 Solicitudes
 
 Chats con clientes
+
