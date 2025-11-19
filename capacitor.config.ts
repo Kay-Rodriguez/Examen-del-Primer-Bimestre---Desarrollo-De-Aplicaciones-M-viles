@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'movilesKarla',
+  appId: 'com.movileskarla.app',
   appName: 'movistarexamen',
   webDir: 'www',
   bundledWebRuntime: false
