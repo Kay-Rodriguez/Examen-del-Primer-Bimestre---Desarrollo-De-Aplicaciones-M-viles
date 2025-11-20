@@ -2,6 +2,10 @@
 Tigo Conecta — Aplicación Móvil (Ionic + Angular + Supabase)
 Escenario: Tras la adquisición de Movistar Ecuador por parte de TIGO, se desarrolla la app Tigo Conecta para gestionar planes móviles, atención por chat, registro y contratación.
 
+#cuenta para entrar cuenta asesor 
+karla.asesora@tigo.com
+Contraseña: Asesora123*
+
 🚀 Tecnologías Usadas
 | Módulo        | Tecnología           |
 | ------------- | -------------------- |
@@ -144,4 +148,5 @@ Dashboard (CRUD planes)
 Chats con clientes
 
 ![Imagen de WhatsApp 2025-11-19 a las 16 39 16_e7d784b4](https://github.com/user-attachments/assets/74e74e35-01f6-49c2-b702-a9e2f7c773a4)
+
 
